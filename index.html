@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>&#x1F34C;Экзотические фрукты</title>
+  </head>
+
+  <body>
+    <main>
+      <!-- Панель управления -->
+      <section class="panel__wrapper">
+        <h2 class="wrapper__title"> Панель управления</h2>
+
+        <div class="panel__devtools">
+          <!-- при нажатии элементы массива перемешиваются в случайном порядке -->
+          <button class="shuffle__btn line">Перемешать</button>
+
+          <div class="line">
+            <!-- пользователь указывает нижнюю границу weight -->
+            <div>min weight:</div>
+            <input class="minweight__input" type="number">
+          </div>
+
+          <div class="line">
+            <!-- пользователь указывает верхнюю границу weight -->
+            <div>max weight:</div>
+            <input class="maxweight__input" type="number">
+          </div>
+
+          <!-- при нажатии элементы массива фильтруются в пределах [minweight, maxweight] -->
+          <button class="filter__btn line">Фильтровать</button>
+
+          <!-- при нажатии сбрасываются значения [minweight, maxweight] и выводится исходный массив -->
+          <button class="filterClear__btn line">Сброс фильтра</button>
+
+          <div class="line">
+            <span>Алгоритм сортировки:</span>
+            <!-- TODO: указывается название алгоритма сортировки -->
+            <span class="sort__kind"></span>
+          </div>
+
+          <div class="line">
+            <span>Время сортировки: </span>
+            <!-- TODO: выводится время сортировки -->
+            <span class="sort__time"></span>
+          </div>
+
+          <!-- TODO: при нажатии происходит смена алгоритма сортировки -->
+          <button class="sort__change__btn line">Сменить алгоритм сортировки</button>
+
+          <!-- TODO: при нажатии происходит сортировка и рассчет времени сортировки -->
+          <button class="sort__action__btn line">Сортировать</button>
+
+          <!-- ввод названия фрукта, допускается любое значение -->
+          <div class="line">
+            <div>kind:</div>
+            <input class="kind__input">
+          </div>
+
+          <!-- выбор цвета фрукта из стандартных цветов -->
+          <div class="line">
+            <div>color:</div>
+            <input class="color__input" list="colorKinds">
+              <datalist id="colorKinds">
+                <option value=""></option>
+                <option value="красный"></option>
+                <option value="оранжевый"></option>
+                <option value="желтый"></option>
+                <option value="зеленый"></option>
+                <option value="бледно-зеленый"></option>
+                <option value="ярко-зеленый"></option>
+                <option value="голубой"></option>
+                <option value="лазурный"></option>
+                <option value="синий"></option>
+                <option value="фиолетовый"></option>
+                <option value="пурпурный"></option>
+                <option value="розовый"></option>               
+              </datalist>
+          </div>
+
+          <!-- ввод веса фруктов, при вводе отрицательного значения появляется окно ALERT с информацией об ошибке -->
+          <div class="line">
+            <div>weight (кг):</div>
+            <input class="weight__input" type="number">
+          </div>
+
+          <!-- при нажатии на кнопку новый фрукт добавляется в конец списка -->
+          <button class="add__action__btn line">Добавить фрукт</button>
+        </div>
+      </section>
+
+      <!-- СПИСОК ЭКЗОТИЧЕСКИХ ФРУКТОВ -->
+      <section class="fruits__wrapper">
+        <h2 class="wrapper__title">Список экзотических фруктов</h2>
+        <!-- список формируется динамически из начального массива объектов и далее к нему добавляются фрукты, введенные пользователем вручную -->
+        <ul class="fruits__list"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
